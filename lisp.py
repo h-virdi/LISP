@@ -1,6 +1,6 @@
 def tokenize(text):
-    text.replace("(", " ( ")
-    text.replace(")", " ) ")
+    text = text.replace("(", " ( ")
+    text = text.replace(")", " ) ")
     return text.split()
 
 def atom(token):
@@ -13,7 +13,7 @@ def atom(token):
             return token
 
 def read_tokens(tokens):
-    token = tokens[0]
+    token = tokens.pop(0)
     if token == "(":
         curr = []
         while tokens and tokens[0] != ")":
